@@ -1,0 +1,40 @@
+# Base class : SmartPhone
+
+class SmartPhone:
+def_ init_(self, brand, model, price):
+    self.brand = brand  
+    self.model = model
+    self.price = price
+def display_info(self):
+    print(f"Brand: {self.brand}, Model: {self.model}, Price: {self.price}")
+
+# Derived class : SmartPhone
+class SmartPhone(SmartPhone):
+    def __init__(self, brand, model, price, camera_quality):
+        super().__init__(brand, model, price)
+        self.camera_quality = camera_quality
+
+    def display_info(self):
+        super().display_info()
+        print(f"Camera Quality: {self.camera_quality} MP")
+
+
+# Example usage
+phone = SmartPhone("Apple", "iPhone 14", 999, 12)
+phone.display_info()
+# Output:
+# Brand: Apple, Model: iPhone 14, Price: 999
+# Camera Quality: 12 MP 
+# The code defines a base class `SmartPhone` and a derived class `SmartPhone` that inherits from it. The derived class adds an additional attribute for camera quality and overrides the `display_info` method to include this new attribute in the output.
+
+# Base class: Vehicle
+class Vehicle:
+    def move(self):
+        raise NotImplementedError("Subclasses must implement this method")
+
+# Subclass: Car
+class Car(Vehicle):
+    def move(self):
+        return "Driving 🚗"
+        
+
